@@ -1,0 +1,79 @@
+cve_management_system/
+│
+├── backend/                          # Backend logic (FastAPI / Flask)
+│   ├── fetch_cve_data.py              # Fetch CVE data from NVD API
+│   ├── db.py                          # Database connection & models (PostgreSQL/MySQL)
+│   ├── sync_cve.py                    # Batch processing & incremental updates
+│   ├── api/                           # API Endpoints
+│   │   ├── cve_routes.py               # API for fetching CVE details
+│   │   ├── filter_routes.py            # Filtering API by CVE ID, year, score, etc.
+│   │   ├── pagination.py               # Server-side pagination logic
+│   │   ├── __init__.py
+│   ├── utils/                         # Helper utilities
+│   │   ├── deduplicate.py              # Data cleansing & de-duplication
+│   │   ├── logging_setup.py            # Logger setup for tracking requests
+│   ├── tests/                         # Unit test cases
+│   │   ├── test_api.py                 # API test cases (pytest/unittest)
+│   │   ├── test_db.py                  # Database testing
+│   └── __init__.py
+│
+├── frontend/                         # UI using Streamlit
+│   ├── app.py                         # Main Streamlit dashboard
+│   ├── components/                    # UI components
+│   │   ├── sidebar.py                  # Sidebar with filters
+│   │   ├── search_bar.py               # Search bar component
+│   │   ├── cve_table.py                # Display CVE list with sorting & pagination
+│   │   ├── cve_details.py              # Detailed CVE information view
+│   ├── static/                        # CSS & JS files (if needed)
+│   ├── templates/                     # HTML templates for embedding (if needed)
+│   └── __init__.py
+│
+├── data/                              # Sample dataset (for testing)
+│   ├── sample_cve_data.json           # Sample CVE response data
+│   ├── schema.sql                     # Database schema for storing CVEs
+│
+├── docs/                              # API Documentation
+│   ├── api_documentation.md           # API Usage & Endpoints
+│
+├── scripts/                           # Automation scripts
+│   ├── run_sync.sh                    # Shell script for periodic data sync
+│
+├── tests/                             # Project-wide tests
+│   ├── test_api_endpoints.py          # API integration tests
+│   ├── test_ui.py                     # Streamlit UI tests
+│
+├── requirements.txt                   # Python dependencies
+├── README.md                          # Project overview & setup guide
+└──
+cve_details.py
+
+
+
+cve_management_system/
+│
+├── frontend/               # Frontend Folder
+│   ├── static/             # Static Assets
+│   │   ├── css/            # CSS Stylesheets
+│   │   │   ├── styles.css  # Main CSS file
+│   │   │   ├── sidebar.css # Sidebar Styles
+│   │   │   ├── search.css  # Search Bar Styles
+│   │   │   ├── table.css   # CVE Table Styles
+│   │   │
+│   │   ├── js/             # JavaScript Files
+│   │   │   ├── sidebar.js  # Sidebar Filters Logic
+│   │   │   ├── search.js   # Search Bar Functionality
+│   │   │   ├── table.js    # Table Sorting & Pagination
+│   │   │   ├── app.js      # Main JS file
+│   │   │
+│   │   ├── images/         # Image Assets
+│   │   │   ├── logo.png    # Website Logo
+│
+│   ├── templates/          # HTML Templates
+│   │   ├── index.html      # Homepage
+│   │   ├── cve_details.html# CVE Details Page
+│   │   ├── sidebar.html    # Sidebar Component
+│   │   ├── search_bar.html # Search Bar Component
+│   │   ├── table.html      # CVE Table Component
+│
+│   ├── frontend.py         # Frontend Server (Optional for Static Hosting)
+ run.sh                             # Shell script to start the full app
